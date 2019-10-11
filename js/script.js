@@ -35,8 +35,9 @@ const quotes = [
 		quote: "The silence in our lives is under assault on all fronts. We are wired, plugged in, constantly catered to and increasingly terrified of silence, unaware of what it has to offer.",
 
     source: "Arianna Huffington",
-    citation: "Thrive",
+
     year: "2014"
+  
 	},
 	{
 		quote: "The mind is our most precious and valuable resource through which we experience every single moment of life. Are you looking after yours?",
@@ -72,6 +73,13 @@ const quotes = [
 		quote: "Brilliant things happen in calm minds.",
 
 		source: "Mindful Moments"
+  },
+  {
+		quote: "Double up...3 or 4 times I ain't tellin' no lies I just run it up. Never let a hard time humble us...Double up!",
+
+    source: "Nipsey Hussle",
+
+    citation: "Double Up ft Belly & Dom Kennedy"
 	}
 ];
 
