@@ -34,9 +34,9 @@ const quotes = [
 	{
 		quote: "The silence in our lives is under assault on all fronts. We are wired, plugged in, constantly catered to and increasingly terrified of silence, unaware of what it has to offer.",
 
-    source: "Arianna Huffington",
+    		source: "Arianna Huffington",
 
-    year: "2014"
+    		year: "2014"
   
 	},
 	{
@@ -73,13 +73,13 @@ const quotes = [
 		quote: "Brilliant things happen in calm minds.",
 
 		source: "Mindful Moments"
-  },
-  {
+  	},
+  	{
 		quote: "Double up...3 or 4 times I ain't tellin' no lies I just run it up. Never let a hard time humble us...Double up!",
 
-    source: "Nipsey Hussle",
+    		source: "Nipsey Hussle",
 
-    citation: "Double Up ft Belly & Dom Kennedy"
+   		citation: "Double Up ft Belly & Dom Kennedy"
 	}
 ];
 
