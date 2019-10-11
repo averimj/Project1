@@ -15,15 +15,78 @@ project 1 - A Random Quote Generator
   Use console.log() to log your array of quotes to the console.
 ***/
 
+const quotes = [
+	{
+		quote: "There were many terrible things in my life, but most of them never happened.",
+
+		source: "Montaigne"
+	},
+	{
+		quote: "My heart is at ease knowing that what was meant for me will never miss me, and that what misses me was never meant for me.",
+
+		source: "Imam Alshai'i"
+	},
+	{
+		quote: "What you focus upon, you become. What you focus on comes to you. So hold in your mind what you want more of.",
+
+		source: "John Roger"
+	},
+	{
+		quote: "The silence in our lives is under assault on all fronts. We are wired, plugged in, constantly catered to and increasingly terrified of silence, unaware of what it has to offer.",
+
+    source: "Arianna Huffington",
+    citation: "Thrive",
+    year: "2014"
+	},
+	{
+		quote: "The mind is our most precious and valuable resource through which we experience every single moment of life. Are you looking after yours?",
+
+		source: "Mindful Moments"
+	},
+	{
+		quote: "Because one is content with oneself, one doesn't need others' approval. Because one accepts oneself, the whole world accepts him or her.",
+
+		source: "Lao Tzu"
+	},
+	{
+		quote: "The world is full of magic things, patiently waiting for our senses to grow sharper.",
+
+		source: "W.B. Yeats"
+	},
+	{
+		quote: "Treat people like family and they will be loyal and give their all.",
+
+		source: "Howard Schultz"
+	},
+	{
+		quote: "Healing is a verb, the body is constantly repairing itself. Disease happens when the repairing process is not keeping up with the damage process.",
+
+		source: "Ester Sternberg"
+	},
+	{
+		quote: "Science has proven that your mind can heal your body.",
+
+		source: "Herbert Benson and William Proctor"
+	},
+	{
+		quote: "Brilliant things happen in calm minds.",
+
+		source: "Mindful Moments"
+	}
+];
 
 
 
 /***
   Create the `getRandomQuote` function to:
    - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
+   - Use the random number to `return` a random quote object from the `quotes` array.
 ***/
 
+const getRandomQuote = () => {
+  let randomQuotes = quotes[Math.floor(Math.random() * quotes.length)];
+    return randomQuotes;
+};
 
 
 
@@ -40,7 +103,28 @@ project 1 - A Random Quote Generator
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
+const printQuote = () => {
+  let randQuote = getRandomQuote();
+  let stringQuote = '';
 
+  stringQuote += <p class="quote"> randQuote.quote </p> <p class="source"> randQuote.source;
+
+    if(randQuote.year) {
+
+       stringQuote += <span class="year"> randQuote.year </span>
+    } 
+    
+    if (randQuote.citation) {
+
+      stringQuote += <span class="citation"> randQuote.citation </span>
+    } 
+    
+  stringQuote += </p>;
+  document.getElementById("quote-box").innerHTML = stringQuote;
+  return stringQuote;
+  }
+
+console.log(printQuote);
 
 
 /***
