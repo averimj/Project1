@@ -32,7 +32,6 @@ const quotes = [
     citation: "Thrive",
 
     year: "2014"
-  
 	},
 	{
 		quote: "The mind is our most precious and valuable resource through which we experience every single moment of life. Are you looking after yours?",
@@ -68,8 +67,8 @@ const quotes = [
 		quote: "Brilliant things happen in calm minds.",
 
 		source: "Mindful Moments"
-    },
-    {
+  },
+  {
 		quote: "Double up...3 or 4 times I ain't tellin' no lies I just run it up. Never let a hard time humble us...Double up!",
 
     source: "Nipsey Hussle",
@@ -129,6 +128,5 @@ const randomBackgroundColor = () => {
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-
-
+<<<<<<< HEAD
 
