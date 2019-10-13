@@ -6,14 +6,7 @@ project 1 - A Random Quote Generator
 // Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
 
 
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
+// Created an array of quote objects
 
 const quotes = [
 	{
@@ -36,6 +29,8 @@ const quotes = [
 
     source: "Arianna Huffington",
 
+    citation: "Thrive",
+
     year: "2014"
   
 	},
@@ -50,7 +45,7 @@ const quotes = [
 		source: "Lao Tzu"
 	},
 	{
-		quote: "The world is full of magic things, patiently waiting for our senses to grow sharper.",
+		quote: "The world is full of magical things, patiently waiting for our senses to grow sharper.",
 
 		source: "W.B. Yeats"
 	},
@@ -73,23 +68,20 @@ const quotes = [
 		quote: "Brilliant things happen in calm minds.",
 
 		source: "Mindful Moments"
-  },
-  {
+    },
+    {
 		quote: "Double up...3 or 4 times I ain't tellin' no lies I just run it up. Never let a hard time humble us...Double up!",
 
     source: "Nipsey Hussle",
 
-    citation: "Double Up ft Belly & Dom Kennedy"
+    citation: "Double Up ft Belly & Dom Kennedy",
+
+    year: "2018"
 	}
 ];
 
 
-
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Use the random number to `return` a random quote object from the `quotes` array.
-***/
+// Created a random number generator that pulls from the quotes array
 
 const getRandomQuote = () => {
   let randomQuotes = quotes[Math.floor(Math.random() * quotes.length)];
@@ -97,52 +89,46 @@ const getRandomQuote = () => {
 };
 
 
-
-/***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
+// Created a function to print the quotes and add the appropriate tags so each quote with a source, citation and/or year can display
 
 const printQuote = () => {
   let randQuote = getRandomQuote();
   let stringQuote = '';
 
-  stringQuote += <p class="quote"> randQuote.quote </p> <p class="source"> randQuote.source;
+  stringQuote += '<p class="quote">' + randQuote.quote + '</p> <p class="source">' + randQuote.source
 
-    if(randQuote.year) {
-
-       stringQuote += <span class="year"> randQuote.year </span>
+    if(randQuote.year || randQuote.citation) {
+         stringQuote += '<span class="citation">' + randQuote.citation + '</span> <span class="year">' + randQuote.year + '</span>'
     } 
-    
-    if (randQuote.citation) {
+    stringQuote += '</p>';
+    document.getElementById("quote-box").innerHTML = stringQuote;
+    return stringQuote;
+};
 
-      stringQuote += <span class="citation"> randQuote.citation </span>
-    } 
-    
-  stringQuote += </p>;
-  document.getElementById("quote-box").innerHTML = stringQuote;
-  return stringQuote;
-  }
+// Created a timer to change quotes every 7 seconds
 
-console.log(printQuote);
+let timerId = setInterval(printQuote, 7000)
 
 
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
+
+// Trying to figure out how to make this random background generator work ... source: https://www.w3resource.com › javascript-math-exercise-40
+
+const randomBackgroundColor = () => {
+  x = Math.floor(Math.random() * 256);
+  y = Math.floor(Math.random() * 256);
+  z = Math.floor(Math.random() * 256);
+  color = "rgb(" + x + "," + y + "," + z + ")";
+
+ document.body.style.backgroundColor = color;
+ };
+ 
+
+
+// added an event listener to change quotes when the "Show another quote" button is clicked
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
+
+
+
