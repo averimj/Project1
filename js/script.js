@@ -83,27 +83,28 @@ const quotes = [
 // Created a random number generator that pulls from the quotes array
 
 const getRandomQuote = () => {
-	let randomQuotes = Math.floor(Math.random() * quotes.length);
-	return quotes[randomQuotes];
+	let randomQuote = Math.floor(Math.random() * quotes.length);
+	return quotes[randomQuote];
 };
 
 
 // Created a function to print the quotes and add the appropriate tags so each quote with a source, citation and/or year can display
+
 const printQuote = () => {
 	let singleQuote = getRandomQuote();
 	let quoteWithProperties = '';
 
 	quoteWithProperties += `<p class="quote"> ${singleQuote.quote}</p> <p class="source"> ${singleQuote.source}`
-
-		if(`${singleQuote.year}` || `${singleQuote.citation}`) {
-			quoteWithProperties += `<span class="citation"> ${singleQuote.citation}</span> <span class="year"> 
-			${singleQuote.year}</span>`
-		}
+	if(singleQuote.citation || singleQuote.year) {
+		quoteWithProperties += `<span class="citation"> ${singleQuote.citation}</span> <span class="year"> ${singleQuote.year}</span>`
+	} 
+ 
 	quoteWithProperties +=`</p>`;
 
-	document.getElementById("quote-box").innerHTML = quoteWithProperties;
-};
+	document.getElementById('quote-box').innerHTML = quoteWithProperties;
 
+	randomBackgroundColor();
+};
 
 
 // Created a timer to change quotes every 7 seconds
@@ -111,19 +112,16 @@ const printQuote = () => {
  let timer = setInterval(printQuote, 7000);
 
 
-// Trying to figure out how to make this random background generator work ... source: https://www.w3resource.com › javascript-math-exercise-40
+// Created a random background generator work ... source: https://www.w3resource.com › javascript-math-exercise-40
 
-const randomBackgroundColor = () => {
-	let red = Math.floor(Math.random() * 256);
-	let green = Math.floor(Math.random() * 256);
-	let blue = Math.floor(Math.random() * 256);
-	let randomColor = rbg(`${red}, ${green}, ${blue}`);
- 	console.log(randomColor);
-  
-	document.body.style.backgroundColor = randomColor;
-};
+   const randomBackgroundColor = () => {
+	red = Math.floor(Math.random() * 256);
+	green = Math.floor(Math.random() * 256);
+	blue = Math.floor(Math.random() * 256);
+	let color = `rgb(${red}, ${green},  ${blue})`;
 
-
+   	document.body.style.backgroundColor = color;
+   };
 
 
 // added an event listener to change quotes when the "Show another quote" button is clicked
