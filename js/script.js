@@ -27,11 +27,11 @@ const quotes = [
 	{
 		quote: "The silence in our lives is under assault on all fronts. We are wired, plugged in, constantly catered to and increasingly terrified of silence, unaware of what it has to offer.",
 
-    source: "Arianna Huffington",
+    	source: "Arianna Huffington",
 
-    citation: "Thrive",
+    	citation: "Thrive",
 
-    year: "2014"
+    	year: "2014"
 	},
 	{
 		quote: "The mind is our most precious and valuable resource through which we experience every single moment of life. Are you looking after yours?",
@@ -67,15 +67,15 @@ const quotes = [
 		quote: "Brilliant things happen in calm minds.",
 
 		source: "Mindful Moments"
-  },
-  {
+  	},
+  	{
 		quote: "Double up...3 or 4 times I ain't tellin' no lies I just run it up. Never let a hard time humble us...Double up!",
 
-    source: "Nipsey Hussle",
+    	source: "Nipsey Hussle",
 
-    citation: "Double Up ft Belly & Dom Kennedy",
+    	citation: "Double Up ft Belly & Dom Kennedy",
 
-    year: "2018"
+    	year: "2018"
 	}
 ];
 
@@ -83,44 +83,47 @@ const quotes = [
 // Created a random number generator that pulls from the quotes array
 
 const getRandomQuote = () => {
-  let randomQuotes = quotes[Math.floor(Math.random() * quotes.length)];
-    return randomQuotes;
+	let randomQuotes = Math.floor(Math.random() * quotes.length);
+	return quotes[randomQuotes];
 };
 
 
 // Created a function to print the quotes and add the appropriate tags so each quote with a source, citation and/or year can display
-
 const printQuote = () => {
-  let randQuote = getRandomQuote();
-  let stringQuote = '';
+	let singleQuote = getRandomQuote();
+	let quoteWithProperties = '';
 
-  stringQuote += '<p class="quote">' + randQuote.quote + '</p> <p class="source">' + randQuote.source
+	quoteWithProperties += `<p class="quote"> ${singleQuote.quote}</p> <p class="source"> ${singleQuote.source}`
 
-    if(randQuote.year || randQuote.citation) {
-         stringQuote += '<span class="citation">' + randQuote.citation + '</span> <span class="year">' + randQuote.year + '</span>'
-    } 
-    stringQuote += '</p>';
-    document.getElementById("quote-box").innerHTML = stringQuote;
-    return stringQuote;
+		if(`${singleQuote.year}` || `${singleQuote.citation}`) {
+			quoteWithProperties += `<span class="citation"> ${singleQuote.citation}</span> <span class="year"> 
+			${singleQuote.year}</span>`
+		}
+	quoteWithProperties +=`</p>`;
+
+	document.getElementById("quote-box").innerHTML = quoteWithProperties;
 };
+
+
 
 // Created a timer to change quotes every 7 seconds
 
-let timerId = setInterval(printQuote, 7000)
-
+ let timer = setInterval(printQuote, 7000);
 
 
 // Trying to figure out how to make this random background generator work ... source: https://www.w3resource.com › javascript-math-exercise-40
 
 const randomBackgroundColor = () => {
-  x = Math.floor(Math.random() * 256);
-  y = Math.floor(Math.random() * 256);
-  z = Math.floor(Math.random() * 256);
-  color = "rgb(" + x + "," + y + "," + z + ")";
+	let red = Math.floor(Math.random() * 256);
+	let green = Math.floor(Math.random() * 256);
+	let blue = Math.floor(Math.random() * 256);
+	let randomColor = rbg(`${red}, ${green}, ${blue}`);
+ 	console.log(randomColor);
+  
+	document.body.style.backgroundColor = randomColor;
+};
 
- document.body.style.backgroundColor = color;
- };
- 
+
 
 
 // added an event listener to change quotes when the "Show another quote" button is clicked
@@ -128,5 +131,5 @@ const randomBackgroundColor = () => {
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
-<<<<<<< HEAD
+
 
