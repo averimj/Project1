@@ -22,7 +22,9 @@ const quotes = [
 	{
 		quote: "What you focus upon, you become. What you focus on comes to you. So hold in your mind what you want more of.",
 
-		source: "John Roger"
+        source: "John Roger",
+        
+        tag: "Personal Motivation"
 	},
 	{
 		quote: "The silence in our lives is under assault on all fronts. We are wired, plugged in, constantly catered to and increasingly terrified of silence, unaware of what it has to offer.",
@@ -36,27 +38,36 @@ const quotes = [
 	{
 		quote: "The mind is our most precious and valuable resource through which we experience every single moment of life. Are you looking after yours?",
 
-		source: "Mindful Moments"
+        source: "Mindful Moments",
+        
+        tag: "Personal Motivation"
+
 	},
 	{
-		quote: "Because one is content with oneself, one doesn't need others' approval. Because one accepts oneself, the whole world accepts him or her.",
+		quote: "Don't nobody come hug you and say goodnight more than a kid that's suppose to be sleep.",
 
-		source: "Lao Tzu"
+        source: "Anonymous Feed Up Parent",
+        
+        tag: "Funny"
 	},
 	{
-		quote: "The world is full of magical things, patiently waiting for our senses to grow sharper.",
+		quote: "A society that keeps cures a secret so they can continue to sell medication for huge profits is not a real society but a huge mental asylum.",
 
-		source: "W.B. Yeats"
+        source: "Dr. Sebi",
+
+        tag: "Food For The Soul"
 	},
 	{
-		quote: "Treat people like family and they will be loyal and give their all.",
+		quote: "Sometimes, being low-key just means: 'I'm working on myself and my life, and I don't need to convinve anyone that I'm up to big things because I don't need their approval.'",
 
-		source: "Howard Schultz"
+		source: "Vex King"
 	},
 	{
-		quote: "Healing is a verb, the body is constantly repairing itself. Disease happens when the repairing process is not keeping up with the damage process.",
+		quote: " Nutrition Fact: If you drink a gallon of water per day, you won't have time for other people's drama because you'll be too busy peeing. Stay hydrated my friends.",
 
-		source: "Ester Sternberg"
+        source: "Unknown",
+        
+        tag: "Funny"
 	},
 	{
 		quote: "Science has proven that your mind can heal your body.",
@@ -66,7 +77,10 @@ const quotes = [
 	{
 		quote: "Brilliant things happen in calm minds.",
 
-		source: "Mindful Moments"
+        source: "Mindful Moments",
+        
+        tag: "Personal Motivation"
+
   	},
   	{
 		quote: "Double up...3 or 4 times I ain't tellin' no lies I just run it up. Never let a hard time humble us...Double up!",
@@ -75,7 +89,9 @@ const quotes = [
 
     	citation: "Double Up ft Belly & Dom Kennedy",
 
-    	year: "2018"
+        year: "2018",
+        
+        tag: "Hip-Hop"
 	}
 ];
 
@@ -95,21 +111,31 @@ const printQuote = () => {
 	let quoteWithProperties = '';
 
 	quoteWithProperties += `<p class="quote"> ${singleQuote.quote}</p> <p class="source"> ${singleQuote.source}`
-	if(singleQuote.citation || singleQuote.year) {
-		quoteWithProperties += `<span class="citation"> ${singleQuote.citation}</span> <span class="year"> ${singleQuote.year}</span>`
-	} 
- 
+	    if(singleQuote.citation) {
+            quoteWithProperties += `<span class="citation"> ${singleQuote.citation}</span>`
+        }
+
+        if(singleQuote.year) {
+            quoteWithProperties += `<span class="year"> ${singleQuote.year}</span>`
+        }
+
+        if(singleQuote.tag) {
+            quoteWithProperties += `<span class="tag"> ${singleQuote.tag}</span>`
+        }
+        
 	quoteWithProperties +=`</p>`;
 
 	document.getElementById('quote-box').innerHTML = quoteWithProperties;
 
-	randomBackgroundColor();
+    randomBackgroundColor();
+    
+    setInterval();
 };
 
 
-// Created a timer to change quotes every 7 seconds
+ // Created a timer to change quotes every 7 seconds
 
- let timer = setInterval(printQuote, 7000);
+ let timer = setInterval(printQuote, 10000);
 
 
 // Created a random background generator work ... source: https://www.w3resource.com › javascript-math-exercise-40

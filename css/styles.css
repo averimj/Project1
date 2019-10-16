@@ -71,6 +71,13 @@ body {
   font-style: normal;
 }
 
+/* this is what i'm trying */
+
+.tag:before {
+  content: ", ";
+  font-style: normal;
+}
+/* to here */
 #loadQuote {
   position: fixed;
   width: 12em;
