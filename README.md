@@ -1,1 +1,1 @@
-# Project1
+Using basic JavaScript, I created a random quote generator using array objects,loops and conditional statments. Watch as a mixture of funny, inspirational and powerful quotes displays across the screen with each quote generating to different background colors
