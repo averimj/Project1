@@ -23,7 +23,7 @@ const quotes = [
 		quote: "What you focus upon, you become. What you focus on comes to you. So hold in your mind what you want more of.",
 
         source: "John Roger",
-        
+
         tag: "Personal Motivation"
 	},
 	{
@@ -39,15 +39,15 @@ const quotes = [
 		quote: "The mind is our most precious and valuable resource through which we experience every single moment of life. Are you looking after yours?",
 
         source: "Mindful Moments",
-        
+
         tag: "Personal Motivation"
 
 	},
 	{
-		quote: "Don't nobody come hug you and say goodnight more than a kid that's suppose to be sleep.",
+		quote: "Nobody hugs you more than a kid that's suppose to be asleep.",
 
         source: "Anonymous Feed Up Parent",
-        
+
         tag: "Funny"
 	},
 	{
@@ -66,7 +66,7 @@ const quotes = [
 		quote: " Nutrition Fact: If you drink a gallon of water per day, you won't have time for other people's drama because you'll be too busy peeing. Stay hydrated my friends.",
 
         source: "Unknown",
-        
+
         tag: "Funny"
 	},
 	{
@@ -78,7 +78,7 @@ const quotes = [
 		quote: "Brilliant things happen in calm minds.",
 
         source: "Mindful Moments",
-        
+
         tag: "Personal Motivation"
 
   	},
@@ -90,7 +90,7 @@ const quotes = [
     	citation: "Double Up ft Belly & Dom Kennedy",
 
         year: "2018",
-        
+
         tag: "Hip-Hop"
 	}
 ];
@@ -122,13 +122,13 @@ const printQuote = () => {
         if(singleQuote.tag) {
             quoteWithProperties += `<span class="tag"> ${singleQuote.tag}</span>`
         }
-        
+
 	quoteWithProperties +=`</p>`;
 
 	document.getElementById('quote-box').innerHTML = quoteWithProperties;
 
     randomBackgroundColor();
-    
+
     setInterval();
 };
 
@@ -153,7 +153,3 @@ const printQuote = () => {
 // added an event listener to change quotes when the "Show another quote" button is clicked
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-
-
